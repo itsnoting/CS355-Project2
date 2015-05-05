@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Simple NodeJS MVC App</title>
+    <title>Scoremore!</title>
+    <link href="/style.css" type="text/css" rel="stylesheet" >
     <script type="text/javascript" src="/jquery-1.11.2.min.js"></script>
 
     <% if(typeof js_include !== 'undefined') {
@@ -16,4 +17,17 @@
         <% /* block
               comments
             */ %>
-        <h1><%= locals.settings.subtitle %>:Simple NodeJS Application</h1>
+        <div id="header">
+            <h1>Scoremore</h1>
+            </div>
+        </div>
+
+        <div id="nav">
+            <a href="/" >Home</a> <br />
+            <a href="/about" >About</a> <br />
+            <a href="/product/all" >Product <br />
+            <a href="/order/all" >Order</a> <br />
+            <a href="/employee/all">Employees</a> <br />
+            <a href="store/all">Stores</a> <br />
+        </div>
+        <div id="content">

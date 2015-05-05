@@ -1,0 +1,36 @@
+<% include header %>
+
+<h2><%=rs.Brand + ' ' + rs.Product_Name%></h2>
+
+<table border="1" align="center">
+    <tr>
+        <th>Brand</th>
+        <td><%=rs.Brand%></td>
+    </tr>
+    <tr>
+        <th>Product Name</th>
+        <td><%=rs.Product_Name%></td>
+    </tr>
+    <tr>
+        <th>VSN</th>
+        <td><%=rs.VSN%></td>
+    </tr>
+    <tr>
+        <th>
+            UPC
+        </th>
+        <td>
+            <%=rs.UPC%>
+        </td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td>$<%=rs.Price%></td>
+    </tr>
+</table>
+
+<div id="edit">
+<a href="product/edit?UPC=" + <%=rs.UPC%> >Edit</a>
+</div>
+
+<% include footer %>

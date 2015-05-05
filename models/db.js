@@ -1,68 +1,64 @@
+/**
+ * Created by kting_000 on 5/4/2015.
+ */
+
 var mysql   = require('mysql');
-var db  = require('./db_connection.js');
+var db  = require('../models/db_connection.js');
 
 /* DATABASE CONFIGURATION */
 var connection = mysql.createConnection(db.config);
 
-exports.GetAll = function(callback) {
-    connection.query('select * from Student',
-        function (err, result) {
-            if(err) {
-                console.log(err);
-                callback(true);
-                return;
-            }
-            console.log(result);
-            callback(false, result);
+exports.productGetAll = function(callback){
+    var query = "SELECT * FROM Product"
+    connection.query(query, function(err, result){
+        if(err){
+            console.log(err);
+            callback(true);
+            return;
         }
-    );
+        console.log(query);
+        callback(false, result);
+    });
+
 }
 
-exports.GetAllView = function(callback) {
-    console.log("You must create the StudentsView MySQL VIEW for the sql statement below to work.");
-    // To create the StudentsView run the CREATE VIEW query below via the mysql client or mysql workbench.
-    // CREATE VIEW StudentsView AS SELECT * FROM Students;
-    connection.query('select Student_number, Name from StudentsView',
-        function (err, result) {
-            if(err) {
-                console.log(err);
-                callback(true);
-                return;
-            }
-            callback(false, result);
+exports.productGetByID = function(UPC, callback){
+    var query= "SELECT * FROM Product WHERE UPC = " + UPC;
+    connection.query(query, function(err, result){
+        if(err){
+            console.log(query);
+            console.log(err);
+            callback(true);
+            return;
         }
-    );
+        console.log()
+        callback(false, result);
+    });
 }
 
-
-exports.GetByID = function(studentid, callback) {
-    console.log(studentid);
-    var query = 'select * from Student WHERE Student_number=' + studentid;
-    console.log(query);
-    connection.query(query,
-        function (err, result) {
-            if(err) {
-                console.log(err);
-                callback(true);
-                return;
-            }
-            callback(false, result);
+exports.openOrder = function(callback){
+    var query = "SELECT * FROM Scoremore WHERE Date_Ordered is null";
+    connection.query(query, function(err, result){
+        if(err){
+            console.log(query);
+            console.log(err);
+            callback(true);
+            return;
         }
-    );
+        callback(false, result);
+    });
 }
 
-exports.Insert = function(student_info, callback) {
-    console.log(student_info);
-    var query = 'INSERT INTO Student (Name, Major, Location) VALUES (\'' + student_info.name + '\', \'' + student_info.major + '\', \'' + student_info.location + '\')';
-    console.log(query);
-    connection.query(query,
-        function (err, result) {
-            if(err) {
-                console.log(err);
-                callback(true);
-                return
-            }
-            callback(false, result);
+exports.initOrder = function(EmpID, StoreID, callback){
+    var query = 'INSERT INTO Scoremore (EmployeeID, StoreID) VALUES (' + EmpID + ', ' + StoreID + ')';
+    connection.query(query, function(err, result){
+        if(err){
+            console.log(query);
+            console.log(err);
+            callback(true);
+            return;
         }
-    );
+        callback(false, result);
+    });
 }
+

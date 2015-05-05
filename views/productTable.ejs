@@ -1,0 +1,23 @@
+<% include header %>
+<h2>Product List</h2>
+<table border="1" align="center">
+    <tr>
+        <th>Brand</th>
+        <th>Product Name</th>
+        <th>VSN</th>
+        <th>Price</th>
+        <th>UPC</th>
+    </tr>
+    <% for (var i =0; i < rs.length; ++i){%>
+    <tr>
+       <td><%=rs[i].Brand%></td>
+        <td><%=rs[i].Product_Name%></td>
+        <td><%=rs[i].VSN%></td>
+        <td>$<%=rs[i].Price%></td>
+        <td><%=rs[i].UPC%></td>
+        <td><a href="/product/?UPC= + <%=rs[i].UPC%>" />Info</td>
+    </tr>
+    <%}%>
+</table>
+
+<% include footer %>

@@ -1,11 +1,68 @@
-table.login {
-    border:none;
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: white;
+
 }
 
-footer {
-    margin-top:20px;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-header {
-    margin-bottom:20px;
+a{
+    color: white;
+
+}
+
+#edit a{
+    text-align: center;
+    color: black;
+}
+
+table a{
+    color: black;
+}
+
+#home{
+    padding: 20%;
+    vertical-align: middle;
+    horiz-align: center;
+}
+
+#header {
+    background-color: #006554;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+
+#content{
+    min-height: 300px;
+    height: auto;
+    text-align: center;
+    horiz-align: center;
+
+}
+
+#footer{
+    vertical-align: inherit;
+    font-style: oblique;
+    text-align: center;
+    background-color: #006554;
+}
+
+#change_store{
+    text-align:right;
+    padding:5px;
+}
+
+#nav {
+    line-height: 30px;
+    background-color: #006554;
+    height: 300px;
+    width: 100px;
+    float: left;
+    padding: 5px;
+    font-weight: 900;
 }

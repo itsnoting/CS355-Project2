@@ -5,8 +5,10 @@ var express = require('express'),
 
 // import routes
 var routes = require('./controller/index');
-var student_route  = require('./controller/student');
-
+var employee_route = require('./controller/employee');
+var product_route = require('./controller/product');
+var order_route = require('./controller/order');
+var cart_route = require('./controller/cart');
 // initialize express web application framework
 // http://expressjs.com/
 var app = express();
@@ -23,11 +25,14 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
 // example of a global variable that can be passed to a template
-app.set('subtitle', 'Lab 18');
+app.set('subtitle', 'Scoremore');
 
 //configure routes
 app.use('/', routes);
-app.use('/student', student_route);
+app.use('/employee', employee_route);
+app.use('/product', product_route);
+app.use('/order', order_route);
+app.use('/cart', cart_route);
 
 // configure static directory for javascript, css, etc.
 app.use(express.static('public'));
