@@ -22,4 +22,44 @@ router.get('/', function(req, res){
     });
 })
 
+router.get('/add', function(req, res){
+    res.render('productCreateForm', {action: '/product/add'});
+})
+
+router.post('/add', function(req, res){
+    db.productInsert(req.body, function(err, result){
+        if(err) throw err;
+        db.productGetByID(req.body.UPC, function(err, result){
+            if(err) throw err;
+            res.render("productInsertSnippet", {rs: result});
+        })
+
+    })
+})
+
+router.get('/edit', function(req, res){
+    db.productGetByID(req.query.UPC, function(err, result){
+        if(err) throw err;
+        res.render('productEditForm', {action: '/product/edit', rs: result});
+    })
+
+})
+
+router.post('/edit', function(req, res){
+    db.productUpdate(req.body, function(err, result){
+        if(err) throw err;
+        db.productGetByID(req.body.UPC, function(err, product){
+            if(err) throw err;
+            res.render('productInsertSnippet', {rs: product});
+        })
+    })
+})
+
+router.get('/delete', function(req, res){
+    db.productDelete(req.query.UPC, function(err, result){
+        if(err) throw err;
+        res.redirect('/product/all');
+    })
+})
+
 module.exports = router;

@@ -1,0 +1,36 @@
+<% include header %>
+
+<h2><%=rs.First_Name + ' ' + rs.Last_Name%>'s Profile</h2>
+
+<table border="1" align="center">
+    <tr>
+        <th>First Name</th>
+        <td><%=rs.First_Name%></td>
+    </tr>
+    <tr>
+        <th>Last Name</th>
+        <td><%=rs.Last_Name%></td>
+    </tr>
+    <tr>
+        <th>Employee Number</th>
+        <td><%=rs.Employee_Num%></td>
+    </tr>
+    <tr>
+        <th>
+            Average Sales
+        </th>
+        <td>
+            $<%=rs.Average%>
+        </td>
+    </tr>
+    <tr>
+        <th>Total Items sold</th>
+        <td><%=rs.Total_Products%></td>
+    </tr>
+</table>
+
+<div id="edit">
+    <a href="/employee/edit?EmployeeID=<%=rs.EmployeeID%>" >Edit</a>
+</div>
+
+<% include footer %>

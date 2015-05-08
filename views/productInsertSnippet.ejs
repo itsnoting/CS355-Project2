@@ -1,0 +1,33 @@
+<div id ="content">
+    <h2>Product Information</h2>
+    <% if (rs.length>0){%>
+    <table id="Product_Info" align="center">
+        <tr>
+            <th>Brand</th>
+            <td><%=rs[0].Brand%></td>
+        </tr>
+        <tr>
+            <th>Product Name</th>
+            <td><%=rs[0].Product_Name%></td>
+        </tr>
+        <tr>
+            <th>VSN</th>
+            <td><%=rs[0].VSN%></td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>$<%=rs[0].Price%></td>
+        </tr>
+        <tr>
+            <th>UPC</th>
+            <td><%=rs[0].UPC%></td>
+        </tr>
+    </table>
+    <a href="/product/all">Back</a>
+    <% } else {%>
+    Invalid Product!
+    <a href="/product/all">Back</a>
+    <%}%>
+
+
+</div>

@@ -1,0 +1,24 @@
+<% var js_include = ['create_store.js']%>
+<% include header %>
+<h2>Add an Employee</h2>
+
+<form id="create_store_form" action="<%=action%>">
+    <table id="store_form" align="center">
+        <tr>
+            <th>Store Number</th>
+            <td><input type="int" id="Store_Number" name="Store_Number"> </td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td><input type="text" id="Address" name="Address"></td>
+        </tr>
+    </table>
+    <input type="button" id="createStoreBtn" value="Create">
+</form>
+<br />
+<br />
+<nr />
+
+<div id="output" style="align-content: center; text-align: center; horiz-align: center; margin:0px; display: none;"></div>
+
+<% include footer %>

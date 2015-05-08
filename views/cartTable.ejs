@@ -1,0 +1,29 @@
+<%include header%>
+
+<h1><%=title%></h1>
+    <%console.log(total);%>
+    <%if (rs[0]){%>
+    <table border="1" align="center">
+    <%for (var i =0; i < rs.length; ++i){%>
+    <tr>
+        <td><%=rs[i].Brand%></td>
+        <td><%=rs[i].Product_Name%></td>
+        <td><%=rs[i].UPC%></td>
+       <td>$<%=rs[i].Price%></td>
+        <%if (isOrder){%>
+        <td><a href="/cart/delete?ItemID=<%=rs[i].ItemID%>">Remove</a></td>
+        <%}%>
+    </tr>
+    <%}%>
+        <tr><td></td><td></td><td>Total</td><td>$<%=total[0].Total%></td><td>        <%if (isOrder){%>
+                <form action="/order/finalize" method="get">
+                    <input type="submit" value="Place Order" />
+                </form>
+                <%}%></td></tr>
+
+    <%} else {%>
+    <tr>Your shopping cart is currently empty!</tr>
+    <%}%>
+</table>
+
+<%include footer%>

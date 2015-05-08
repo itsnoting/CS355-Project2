@@ -1,0 +1,35 @@
+<% include header %>
+
+<h2>Order List</h2>
+<p>Click on the Date Ordered to see the details of the placed order.</p>
+<table border="1" align="center">
+    <tr>
+        <th>Date Ordered</th>
+        <th>Employee</th>
+        <th>Store Number</th>
+        <th>Total Price</th>
+        <th>Total Item(s)</th>
+    </tr>
+    <% for (var i=0; rs.length > i; i++){%>
+    <%console.log(rs[i].OrderID);%>
+    <tr>
+        <td><a href="/order?OrderID=<%=rs[i].OrderID%>"><%=rs[i].Date_Ordered%></a></td>
+        <td><%=rs[i].Last_Name%>, <%=rs[i].First_Name%></td>
+        <td><%=rs[i].Store_Number%></td>
+        <td><%=rs[i].Total_Price%></td>
+        <td><%=rs[i].Total_Products%></td>
+
+    </tr>
+    <%}%>
+</table>
+
+<%if (op[0]) {%>
+    <%console.log("open order") %>
+    <a style="color: black" href="/cart/current">Check your cart!</a>
+    <a style="color: black; float: right" href="/order/cancel">Cancel Order</a>
+<%} else {%>
+    <%console.log("no open orders")%>
+    <a style="color: black" href="/order/create">Start your order!</a>
+<%}%>
+
+<% include footer %>

@@ -1,0 +1,19 @@
+<div id ="content">
+    <h2>Store Information</h2>
+    <% if (rs.length>0){%>
+    <table id="Store_Info" align="center">
+        <tr>
+            <th>Store Number</th>
+            <td><%=rs[0].Store_Number%></td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td><%=rs[0].Address%></td>
+        </tr>
+    </table>
+    <% } else {%>
+    Invalid Store!
+    <%}%>
+    <a href="/store/all">Back</a>
+
+</div>

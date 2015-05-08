@@ -1,0 +1,23 @@
+<div id ="content">
+<h2>Employee Information</h2>
+<% if (rs.length>0){%>
+    <table id="Employee_Info" align="center">
+        <tr>
+            <th>First Name</th>
+            <td><%=rs[0].First_Name%></td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td><%=rs[0].Last_Name%></td>
+        </tr>
+        <tr>
+            <th>Employee Number</th>
+            <td><%=rs[0].Employee_Num%></td>
+        </tr>
+    </table>
+<% } else {%>
+    Invalid Employee!
+<%}%>
+<a href="/employee/all">Back</a>
+
+</div>

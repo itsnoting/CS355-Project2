@@ -1,0 +1,40 @@
+<% var js_include = ['update_product.js']%>
+<% include header %>
+
+<h2>Add a Product</h2>
+
+<form id="update_product_form" action="<%=action%>">
+    <table id="product_form" align="center">
+        <tr>
+            <th>Brand</th>
+            <td><input type="text" id="Brand" name=Brand value="<%=rs[0].Brand%>"> </td>
+        </tr>
+        <tr>
+            <th>Product Name</th>
+            <td><input type="text" id="Product_Name" name="Product_Name" value="<%=rs[0].Product_Name%>"></td>
+        </tr>
+        <tr>
+            <th>VSN</th>
+            <td><input type="text" id="VSN" name="VSN" value="<%=rs[0].VSN%>"></td>
+        </tr>
+        <tr>
+            <th>Price: $</th>
+            <td><input type="int" id="Price" name="Price" value="<%=rs[0].Price%>" /></td>
+        </tr>
+        <tr>
+            <th>UPC</th>
+            <td><input type="text" id="UPC" name="UPC" value="<%=rs[0].UPC%>" /></td>
+        </tr>
+    </table>
+    <input type="button" id="updateProductBtn" value="Create">
+</form>
+<br />
+<br />
+<nr />
+
+<div id="output" style="align-content: center; text-align: center; horiz-align: center; margin:0px; display: none;"></div>
+
+
+
+
+<% include footer %>

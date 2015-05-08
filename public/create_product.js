@@ -1,17 +1,19 @@
 /**
- * Created by kting_000 on 5/4/2015.
+ * Created by kting_000 on 5/6/2015.
  */
-
 $(document).ready(function () {
-    $('#createStudentBtn').click( function(event){
+    $('#createProductBtn').click( function(event){
         event.preventDefault();
         var payload = {
-           EmployeeID: $('#EmployeeID').val(),
-           StoreID: $('#StoreID').val()
+            Brand: $('#Brand').val(),
+            Product_Name: $('#Product_Name').val(),
+            VSN: $('#VSN').val(),
+            Price: $('#Price').val(),
+            UPC: $('#UPC').val()
         };
 
         $.ajax({
-            url: $("#create_order").attr("action"),
+            url: $("#create_product_form").attr("action"),
             type: "POST",
             contentType: "application/json",
             processData: false,

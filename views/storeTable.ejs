@@ -1,0 +1,24 @@
+<% include header %>
+<h2>Store List</h2>
+<table border="1" align="center">
+    <tr>
+        <th>Store Number</th>
+        <th>Address</th>
+        <th>Total Orders</th>
+        <th>Average Sales</th>
+    </tr>
+    <% for (var i =0; i < rs.length; ++i){%>
+    <tr>
+        <td><%=rs[i].Store_Number%></td>
+        <td><%=rs[i].Address%></td>
+        <td><%=rs[i].Total_Orders%></td>
+        <td>$<%=rs[i].Average_Sales%></td>
+        <td><a href="/store/?StoreID=<%=rs[i].StoreID%>" />Info</td>
+        <td><a href="/store/edit?StoreID=<%=rs[i].StoreID%>" />Edit</td>
+        <td><a href="/store/delete?StoreID=<%=rs[i].StoreID%>">Delete</a></td>
+    </tr>
+    <%}%>
+</table>
+<a href="/store/add" style="color: black">Add a Store</a>
+
+<% include footer %>

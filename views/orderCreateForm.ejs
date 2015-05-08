@@ -1,0 +1,33 @@
+<% var js_include = ['init_order.js']%>
+<% include header %>
+
+<form id="create_order_form" action="<%=action %>">
+    <table id="order_form" align="center">
+        <tr>
+    <th>Employee</th>
+    <td><select id="EmployeeID" name="EmployeeID">
+        <% for (var i =0; rs.length > i; ++i) { %>
+            <option value="<%=rs[i].EmployeeID%>">
+                <%=rs[i].First_Name%> <%=rs[i].Last_Name%>
+            </option>
+
+        <%}%>
+    </select></td>
+        </tr>
+        <tr>
+    <th>Store</th>
+            <td>
+    <select id="StoreID" name="StoreID">
+        <% for (var i =0; store.length > i; ++i) { %>
+        <option value="<%=store[i].StoreID%>">
+            <%=store[i].Address%>
+        </option>
+        <%}%>
+    </select>
+            </td>
+        </tr>
+    </table>
+    <input type="button" id="orderCreateBtn" name="orderCreateBtn" value="Start Order!">
+</form>
+
+<% include footer%>

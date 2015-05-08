@@ -1,0 +1,25 @@
+<% var js_include = ['update_store.js']%>
+<% include header %>
+<h2>Edit an Employee</h2>
+
+<form id="update_store_form" action="<%=action%>">
+    <table id="store_form" align="center">
+        <tr>
+            <th>Store Number</th>
+            <td><input type="int" id="Store_Number" name="Store_Number" value="<%=rs[0].Store_Number%>"> </td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td><input type="text" id="Address" name="Address" value="<%=rs[0].Address%>"></td>
+        </tr>
+    </table>
+    <input type="hidden" id="StoreID" name="StoreID" value="<%=rs[0].StoreID%>">
+    <input type="button" id="updateStoreBtn" value="Update">
+</form>
+<br />
+<br />
+<nr />
+
+<div id="output" style="align-content: center; text-align: center; horiz-align: center; margin:0px; display: none;"></div>
+
+<% include footer %>

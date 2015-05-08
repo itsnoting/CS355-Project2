@@ -15,9 +15,12 @@
         <td><%=rs[i].VSN%></td>
         <td>$<%=rs[i].Price%></td>
         <td><%=rs[i].UPC%></td>
-        <td><a href="/product/?UPC= + <%=rs[i].UPC%>" />Info</td>
+        <td><a href="/product/?UPC=<%=rs[i].UPC%>" />Info</td>
+        <td><a href="/product/edit?UPC=<%=rs[i].UPC%>" />Edit</td>
+        <td><a href="/product/delete?UPC=<%=rs[i].UPC%>">Delete</a></td>
     </tr>
     <%}%>
 </table>
+<a href="/product/add" style="color: black">Add a Product</a>
 
 <% include footer %>

@@ -1,0 +1,26 @@
+<% include header %>
+
+<h2>Employee List</h2>
+<table border="1" align="center">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Employee Numbers</th>
+        <th>Average Sales</th>
+    </tr>
+    <% for (var i =0; i < rs.length; ++i){%>
+    <tr>
+        <td><%=rs[i].First_Name%></td>
+        <td><%=rs[i].Last_Name%></td>
+        <td><%=rs[i].Employee_Num%></td>
+        <td>$<%=rs[i].Average%></td>
+        <td><a href="/employee?EmployeeID=<%=rs[i].EmployeeID%>">Info</a></td>
+        <td><a href="/employee/edit?EmployeeID=<%=rs[i].EmployeeID%>" >Edit</a></td>
+        <td><a href="/employee/delete?EmployeeID=<%=rs[i].EmployeeID%>" >Delete</a></td>
+    </tr>
+    <%}%>
+</table>
+
+<a href="/employee/add" style="color: black">Add an Employee</a>
+
+<% include footer %>

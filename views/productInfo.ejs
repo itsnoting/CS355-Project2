@@ -30,7 +30,9 @@
 </table>
 
 <div id="edit">
-<a href="product/edit?UPC=" + <%=rs.UPC%> >Edit</a>
+    <a href="/product/edit?UPC=<%=rs.UPC%>" >Edit</a> <br />
+    <a href="/cart/add?UPC=<%=rs.UPC%>" >Purchase</a>
 </div>
+
 
 <% include footer %>

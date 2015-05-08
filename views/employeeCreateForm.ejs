@@ -1,0 +1,28 @@
+<% var js_include = ['create_employee.js']%>
+<% include header %>
+<h2>Add an Employee</h2>
+
+<form id="create_employee_form" action="<%=action%>">
+      <table id="employee_form" align="center">
+          <tr>
+            <th>First Name</th>
+              <td><input type="text" id="First_Name" name="First_Name"> </td>
+          </tr>
+          <tr>
+              <th>Last Name</th>
+              <td><input type="text" id="Last_Name" name="Last_Name"></td>
+          </tr>
+          <tr>
+              <th>Employee Number</th>
+              <td><input type="int" id="Employee_Num" name="Employee_Num"></td>
+          </tr>
+      </table>
+        <input type="button" id="createEmployeeBtn" value="Create">
+</form>
+<br />
+<br />
+<nr />
+
+<div id="output" style="align-content: center; text-align: center; horiz-align: center; margin:0px; display: none;"></div>
+
+<% include footer %>

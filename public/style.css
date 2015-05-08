@@ -24,6 +24,10 @@ table a{
     color: black;
 }
 
+table{
+    align: center;
+}
+
 #home{
     padding: 20%;
     vertical-align: middle;
@@ -37,9 +41,18 @@ table a{
     padding:5px;
 }
 
+#About{
+    float: inherit;
+}
+
+#About_Center{
+    float: inherit;
+}
+
 #content{
     min-height: 300px;
     height: auto;
+    align-content: center;
     text-align: center;
     horiz-align: center;
 
@@ -60,7 +73,8 @@ table a{
 #nav {
     line-height: 30px;
     background-color: #006554;
-    height: 300px;
+    min-height: 300px;
+    height: auto;
     width: 100px;
     float: left;
     padding: 5px;

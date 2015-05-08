@@ -9,6 +9,7 @@ var employee_route = require('./controller/employee');
 var product_route = require('./controller/product');
 var order_route = require('./controller/order');
 var cart_route = require('./controller/cart');
+var store_route = require('./controller/store');
 // initialize express web application framework
 // http://expressjs.com/
 var app = express();
@@ -33,6 +34,7 @@ app.use('/employee', employee_route);
 app.use('/product', product_route);
 app.use('/order', order_route);
 app.use('/cart', cart_route);
+app.use('/store', store_route);
 
 // configure static directory for javascript, css, etc.
 app.use(express.static('public'));
