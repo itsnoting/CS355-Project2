@@ -4,6 +4,10 @@
     <%console.log(total);%>
     <%if (rs[0]){%>
     <table border="1" align="center">
+        <th>Brand</th>
+        <th>Product Name</th>
+        <th>UPC</th>
+        <th>Price</th>
     <%for (var i =0; i < rs.length; ++i){%>
     <tr>
         <td><%=rs[i].Brand%></td>
