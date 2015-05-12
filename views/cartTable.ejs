@@ -19,8 +19,8 @@
         <%}%>
     </tr>
     <%}%>
-        <tr><td></td><td></td><td>Total</td><td>$<%=total[0].Total%></td><td>        <%if (isOrder){%>
-                <form action="/order/finalize" method="get">
+        <tr><td></td><td></td><td>Total</td><td>$<%=total[0].Total%></td>        <%if (isOrder){%>
+            <td><form action="/order/finalize" method="get">
                     <input type="submit" value="Place Order" />
                 </form>
                 <%}%></td></tr>

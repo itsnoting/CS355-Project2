@@ -38,9 +38,7 @@ router.post('/add', function(req, res){
 router.get('/delete', function(req, res){
     db.employeeDelete(req.query.EmployeeID, function(err, result){
         if(err) throw err;
-        db.employeeGetAllView(function(err, result){
-            res.redirect('/employee/all') ;
-        })
+        res.redirect('/employee/all') ;
     })
 })
 
